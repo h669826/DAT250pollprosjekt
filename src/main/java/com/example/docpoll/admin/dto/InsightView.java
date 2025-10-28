@@ -1,20 +1,21 @@
 package com.example.docpoll.admin.dto;
 
 import java.util.List;
+import java.util.UUID;
 
 //TODO: tuning/can maybe decide to extend for user-specific details/create a dto for it
 public record InsightView(
-        String pollId,
+        UUID pollId,
         String title,
         List<QuestionInsight> questions
 ) {
     public record QuestionInsight(
-            String questionId,
+            UUID questionId,
             String caption,
             List<OptionCount> options
     ){}
     public record OptionCount(
-            String optionId,
+            UUID optionId,
             String label,
             int count
     ){}

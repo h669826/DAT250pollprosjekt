@@ -6,6 +6,8 @@ import com.example.docpoll.admin.service.AdminPollService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.UUID;
+
 @RestController
 @RequestMapping("/api/admin/polls")
 @RequiredArgsConstructor
@@ -23,13 +25,13 @@ public class AdminPollController {
 
     @GetMapping("/{pollId}/insights")
     // KEYCLOAK @PreAuthorize("hasRole('ADMIN')")
-    public InsightView getInsights(@PathVariable String pollId) {
+    public InsightView getInsights(@PathVariable UUID pollId) {
         return adminPollService.getInsights(pollId);
     }
 
     @PostMapping("/{pollId}/close")
     // KEYCLOAK @PreAuthorize("hasRole('ADMIN')")
-    public void closePoll(@PathVariable("pollId") String pollId){
+    public void closePoll(@PathVariable("pollId") UUID pollId){
         adminPollService.closePoll(pollId);
     }
 }

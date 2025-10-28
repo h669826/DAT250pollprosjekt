@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -30,12 +31,12 @@ public class AdminPollServiceImp implements AdminPollService {
     }
 
     @Override
-    public void closePoll(String pollId) {
+    public void closePoll(UUID pollId) {
         //TODO
     }
 
     @Override
-    public InsightView getInsights(String pollId) {
+    public InsightView getInsights(UUID pollId) {
         //TODO
         return null;
     }
